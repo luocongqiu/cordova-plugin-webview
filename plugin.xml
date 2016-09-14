@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-webview"
+        version="0.0.1">
+    <engines>
+        <engine name="cordova" version=">=4.0.0"/>
+    </engines>
+    <name>WebView</name>
+    <description>open url with WebView</description>
+    <author>luo cong qiu</author>
+    <keywords>cordova, WebView ,browser,html,html5, ios, android</keywords>
+    <js-module src="www/WebView.js" name="WebView">
+        <clobbers target="window.WebView"/>
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="WebView">
+                <param name="ios-package" value="CDVWebView"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CDVWebView.h"/>
+        <source-file src="src/ios/CDVWebView.m"/>
+        <header-file src="src/ios/CDVWebViewController.h"/>
+        <source-file src="src/ios/CDVWebViewController.m"/>
+        <header-file src="src/ios/CDVWebViewNavigationController.h"/>
+        <source-file src="src/ios/CDVWebViewNavigationController.m"/>
+        <header-file src="src/ios/CDVWebViewOptions.h"/>
+        <source-file src="src/ios/CDVWebViewOptions.m"/>
+
+        <resource-file src="src/ios/Resources/ic_back.png"/>
+        <resource-file src="src/ios/Resources/ic_back@2x.png"/>
+        <resource-file src="src/ios/Resources/ic_back@3x.png"/>
+    </platform>
+    <!--<platform name="android">-->
+    <!--<config-file target="config.xml" parent="/*">-->
+    <!--<feature name="PKVideoThumbnail">-->
+    <!--<param name="android-package" value="com.photokandy.PKVideoThumbnail.PKVideoThumbnail"/>-->
+    <!--</feature>-->
+    <!--</config-file>-->
+    <!--<config-file target="AndroidManifest.xml" parent="/*">-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+    <!--</config-file>-->
+    <!--<source-file src="src/android/PKVideoThumbnail.java" target-dir="src/com/photokandy/PKVideoThumbnail"/>-->
+    <!--</platform>-->
+</plugin>
