@@ -24,8 +24,6 @@
         <source-file src="src/ios/CDVWebView.m"/>
         <header-file src="src/ios/CDVWebViewController.h"/>
         <source-file src="src/ios/CDVWebViewController.m"/>
-        <header-file src="src/ios/CDVWebViewNavigationController.h"/>
-        <source-file src="src/ios/CDVWebViewNavigationController.m"/>
         <header-file src="src/ios/CDVWebViewOptions.h"/>
         <source-file src="src/ios/CDVWebViewOptions.m"/>
 

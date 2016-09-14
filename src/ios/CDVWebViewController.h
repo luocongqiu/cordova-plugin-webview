@@ -9,7 +9,7 @@
 @class CDVWebView;
 @class CDVWebViewOptions;
 
-@interface CDVWebViewController : UIViewController <UIWebViewDelegate, CDVScreenOrientationDelegate, UIActionSheetDelegate> {
+@interface CDVWebViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate> {
     NSString *_userAgent;
     NSString *_prevUserAgent;
     NSInteger _userAgentLockToken;
@@ -23,7 +23,6 @@
 @property(nonatomic, strong) IBOutlet UIButton *backButton;
 @property(nonatomic, strong) IBOutlet UIView *toolbar;
 
-@property(nonatomic, weak) id <CDVScreenOrientationDelegate> orientationDelegate;
 @property(nonatomic, weak) CDVWebView *navigationDelegate;
 @property(nonatomic) NSURL *currentURL;
 

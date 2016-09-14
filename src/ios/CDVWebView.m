@@ -3,7 +3,6 @@
 #import "CDVWebView.h"
 #import "CDVWebViewController.h"
 #import "CDVWebViewOptions.h"
-#import "CDVWebViewNavigationController.h"
 
 typedef NSDictionary *dictionary;
 
@@ -74,10 +73,6 @@ typedef NSDictionary *dictionary;
                    browserOptions:browserOptions
                  navigationDelete:self
                    statusBarStyle:[UIApplication sharedApplication].statusBarStyle];
-
-        if ([self.viewController conformsToProtocol:@protocol(CDVScreenOrientationDelegate)]) {
-            self.webViewController.orientationDelegate = (UIViewController <CDVScreenOrientationDelegate> *) self.viewController;
-        }
     }
 
     [self.webViewController showLocationBar];
@@ -144,7 +139,7 @@ typedef NSDictionary *dictionary;
 }
 
 - (void)show:(CDVInvokedUrlCommand *)command {
-    [self show:<#(CDVInvokedUrlCommand *)command#> withAnimation:YES];
+    [self show:command withAnimation:YES];
 }
 
 - (void)show:(CDVInvokedUrlCommand *)command withAnimation:(BOOL)animated {
@@ -165,8 +160,7 @@ typedef NSDictionary *dictionary;
 
     _isShown = YES;
 
-    CDVWebViewNavigationController *nav = [[CDVWebViewNavigationController alloc] initWithRootViewController:self.webViewController];
-    nav.orientationDelegate = self.webViewController;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.webViewController];
     nav.navigationBarHidden = YES;
     dispatch_async(dispatch_get_main_queue(), ^{
         if (self.webViewController != nil) {
