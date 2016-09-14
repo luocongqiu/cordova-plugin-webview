@@ -74,13 +74,8 @@ typedef NSDictionary *dictionary;
                  navigationDelete:self
                    statusBarStyle:[UIApplication sharedApplication].statusBarStyle];
     }
-
-    [self.webViewController showLocationBar];
-    [self.webViewController showToolBar];
-
     self.webViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 
-    // UIWebView options
     self.webViewController.webView.scalesPageToFit = YES;
     self.webViewController.webView.mediaPlaybackRequiresUserAction = NO;
     self.webViewController.webView.allowsInlineMediaPlayback = NO;
@@ -121,7 +116,7 @@ typedef NSDictionary *dictionary;
 - (void)openInSystem:(NSURL *)url {
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
-    } else { // handle any custom schemes to plugins
+    } else {
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:CDVPluginHandleOpenURLNotification object:url]];
     }
 }
@@ -235,7 +230,7 @@ typedef NSDictionary *dictionary;
 }
 
 - (void)reload:(CDVInvokedUrlCommand *)command {
-
+    [self.webViewController reload];
 }
 
 - (void)emitEvent:(NSDictionary *)event {

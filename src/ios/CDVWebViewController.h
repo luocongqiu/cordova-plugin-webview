@@ -16,6 +16,8 @@
     UIStatusBarStyle _statusBarStyle;
     CDVWebViewOptions *_options;
     CDVUIWebViewDelegate *_webViewDelegate;
+    UIActivityIndicatorView *_spinner;
+    UILabel *_errorLabel;
 }
 
 @property(nonatomic, strong) IBOutlet UIWebView *webView;
@@ -31,10 +33,6 @@
 - (void)reload;
 
 - (void)navigateTo:(NSURL *)url;
-
-- (void)showLocationBar;
-
-- (void)showToolBar;
 
 - (id)initWithUserAgent:(NSString *)userAgent prevUserAgent:(NSString *)prevUserAgent browserOptions:(CDVWebViewOptions *)browserOptions navigationDelete:(CDVWebView *)navigationDelegate statusBarStyle:(UIStatusBarStyle)statusBarStyle;
 
