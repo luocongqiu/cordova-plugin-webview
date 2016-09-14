@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/initialxy/cordova-plugin-themeablebrowser"
+    "url": "https://github.com/luocongqiu/cordova-plugin-webview.git"
   },
   "keywords": [
     "cordova",
