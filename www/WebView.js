@@ -28,17 +28,17 @@ WebView.prototype = {
         return this;
     },
 
-    addEventListener: function (eventname, f) {
-        if (!(eventname in this.channels)) {
-            this.channels[eventname] = channel.create(eventname);
+    addEventListener: function (eventName, f) {
+        if (!(eventName in this.channels)) {
+            this.channels[eventName] = channel.create(eventName);
         }
-        this.channels[eventname].subscribe(f);
+        this.channels[eventName].subscribe(f);
         return this;
     },
-    
-    removeEventListener: function (eventname, f) {
-        if (eventname in this.channels) {
-            this.channels[eventname].unsubscribe(f);
+
+    removeEventListener: function (eventName, f) {
+        if (eventName in this.channels) {
+            this.channels[eventName].unsubscribe(f);
         }
         return this;
     }
