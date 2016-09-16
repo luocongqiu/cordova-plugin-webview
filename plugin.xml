@@ -31,15 +31,27 @@
         <resource-file src="src/ios/Resources/ic_back@2x.png"/>
         <resource-file src="src/ios/Resources/ic_back@3x.png"/>
     </platform>
-    <!--<platform name="android">-->
-    <!--<config-file target="config.xml" parent="/*">-->
-    <!--<feature name="PKVideoThumbnail">-->
-    <!--<param name="android-package" value="com.photokandy.PKVideoThumbnail.PKVideoThumbnail"/>-->
-    <!--</feature>-->
-    <!--</config-file>-->
-    <!--<config-file target="AndroidManifest.xml" parent="/*">-->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
-    <!--</config-file>-->
-    <!--<source-file src="src/android/PKVideoThumbnail.java" target-dir="src/com/photokandy/PKVideoThumbnail"/>-->
-    <!--</platform>-->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WebView">
+                <param name="android-package" value="com.cordova.plugins.webview.WebViewPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.cordova.plugins.webview.WebViewActivity"
+                      android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        </config-file>
+
+        <source-file src="src/android/WebViewActivity.java" target-dir="src/com/cordova/plugins/webview"/>
+        <source-file src="src/android/WebViewPlugin.java" target-dir="src/com/cordova/plugins/webview"/>
+
+        <source-file src="src/android/res/drawable-hdpi/ic_back.png" target-dir="res/drawable-hdpi"/>
+        <source-file src="src/android/res/drawable-ldpi/ic_back.png" target-dir="res/drawable-ldpi"/>
+        <source-file src="src/android/res/drawable-mdpi/ic_back.png" target-dir="res/drawable-mdpi"/>
+        <source-file src="src/android/res/drawable-xhdpi/ic_back.png" target-dir="res/drawable-xhdpi"/>
+        <source-file src="src/android/res/drawable-xxhdpi/ic_back.png" target-dir="res/drawable-xxhdpi"/>
+        <source-file src="src/android/res/layout/activity_web_view.xml" target-dir="res/layout"/>
+    </platform>
 </plugin>
