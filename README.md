@@ -1,5 +1,5 @@
 # cordova-plugin-webview
-打开远程或本地html5页面
+打开远程或本地html5页面，可以设置头部背景颜色、字体颜色，状态栏跟头背景颜色一致，标题头内容显示页面title内容
 ## 安装
 `cordova plugin add https://github.com/luocongqiu/cordova-plugin-webview.git`
 ## 示例
