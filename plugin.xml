@@ -40,12 +40,12 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:name="com.cordova.plugins.webview.WebViewActivity"
-                      android:theme="@android:style/Theme.Light.NoTitleBar"/>
+            <activity android:name="com.cordova.plugins.webview.WebViewActivity" android:theme="@android:style/Theme.Light.NoTitleBar"/>
         </config-file>
 
         <source-file src="src/android/WebViewActivity.java" target-dir="src/com/cordova/plugins/webview"/>
         <source-file src="src/android/WebViewPlugin.java" target-dir="src/com/cordova/plugins/webview"/>
+        <source-file src="src/android/WebViewOptions.java" target-dir="src/com/cordova/plugins/webview"/>
 
         <source-file src="src/android/res/drawable-hdpi/ic_back.png" target-dir="res/drawable-hdpi"/>
         <source-file src="src/android/res/drawable-ldpi/ic_back.png" target-dir="res/drawable-ldpi"/>
