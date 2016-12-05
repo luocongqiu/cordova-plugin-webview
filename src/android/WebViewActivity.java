@@ -197,4 +197,8 @@ public class WebViewActivity extends Activity {
             this.finish();
         }
     }
+
+    public void close(View view) {
+        this.finish();
+    }
 }
