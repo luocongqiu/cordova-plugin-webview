@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-webview",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Cordova WebView Plugin",
   "cordova": {
     "id": "cordova-plugin-webview",
