@@ -22,6 +22,7 @@
 
 @property(nonatomic, strong) IBOutlet UIWebView *webView;
 @property(nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property(nonatomic, strong) IBOutlet UIButton *closeButton;
 @property(nonatomic, strong) IBOutlet UIButton *backButton;
 @property(nonatomic, strong) IBOutlet UIView *toolbar;
 
