@@ -83,19 +83,8 @@
     self.toolbar.userInteractionEnabled = YES;
     self.toolbar.backgroundColor = [CDVWebViewController colorFromRGBA:_options.headBarBg];
 
-    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    closeButton.frame = CGRectMake(0, statusBarHeight, _options.headBarHeight, _options.headBarHeight);
-    closeButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-
-    [closeButton setImage:[UIImage imageNamed:@"ic_close"] forState:UIControlStateNormal];
-    [closeButton addTarget:self action:@selector(closeWebView:) forControlEvents:UIControlEventTouchUpInside];
-
-    self.closeButton = closeButton;
-    [self.toolbar addSubview:self.closeButton];
-
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(closeButton.frame.size.width, statusBarHeight, _options.headBarHeight, _options.headBarHeight);
+    backButton.frame = CGRectMake(0, statusBarHeight, _options.headBarHeight, _options.headBarHeight);
     backButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
 
@@ -105,8 +94,22 @@
     self.backButton = backButton;
     [self.toolbar addSubview:self.backButton];
 
-    CGFloat titleWidth = CGRectGetWidth(self.view.frame) - backButton.frame.size.width * 2.0f - closeButton.frame.size.width;
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(backButton.frame.size.width + closeButton.frame.size.width, statusBarHeight, titleWidth, _options.headBarHeight)];
+    CGFloat closeLeft = CGRectGetWidth(self.view.frame) - _options.headBarHeight;
+
+    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    closeButton.frame = CGRectMake(closeLeft, statusBarHeight, _options.headBarHeight, _options.headBarHeight);
+    closeButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+
+    [closeButton setImage:[UIImage imageNamed:@"ic_close"] forState:UIControlStateNormal];
+    [closeButton addTarget:self action:@selector(closeWebView:) forControlEvents:UIControlEventTouchUpInside];
+
+    self.closeButton = closeButton;
+    [self.toolbar addSubview:self.closeButton];
+
+
+    CGFloat titleWidth = CGRectGetWidth(self.view.frame) - backButton.frame.size.width - closeButton.frame.size.width;
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(backButton.frame.size.width, statusBarHeight, titleWidth, _options.headBarHeight)];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.numberOfLines = 1;
     self.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;

@@ -12,14 +12,6 @@
             android:layout_height="44dp">
 
         <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:contentDescription="关闭按钮"
-                android:onClick="close"
-                android:src="@drawable/ic_close" />
-
-        <ImageView
                 android:id="@+id/backBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,6 +29,17 @@
                 android:gravity="center_vertical"
                 android:lines="1"
                 android:textSize="20sp" />
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:contentDescription="关闭按钮"
+                android:onClick="close"
+                android:src="@drawable/ic_close" />
+
     </LinearLayout>
 
     <WebView
